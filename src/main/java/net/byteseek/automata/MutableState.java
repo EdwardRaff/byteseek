@@ -424,7 +424,7 @@ public class MutableState<T> implements State<T> {
 			oldToNewObjects.put(this, stateCopy);
 			for (Transition<T> transition : transitions) {
 				final Transition<T> transitionCopy = transition.deepCopy(oldToNewObjects);
-				stateCopy.transitions.add(transitionCopy);
+				stateCopy.addTransition(transitionCopy);
 			}
 		}
 		return stateCopy;
